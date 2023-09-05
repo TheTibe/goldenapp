@@ -1,66 +1,17 @@
 <div id="authenticator">
-    <mat-card id="authenticator-content">
-      <mat-card-header>
-        <mat-card-title> {{ getStateText() }}</mat-card-title>
-      </mat-card-header>
-      <div *ngIf="isLoginState()">
-        <input
-          type="text"
-          [(ngModel)]="registerUsername"
-          placeholder="მომხმარებლის სახელი"
-        />
-        <input
-          type="password"
-          [(ngModel)]="registerPassword"
-          placeholder="პაროლი"
-        />
-        <button
-          (click)="onLogin(registerUsername, registerPassword)"
-          mat-flat-button
-          color="warn"
-        >
-          შესვლა
-        </button>
-      </div>
-      <div *ngIf="isRegisterState()">
-        <input
-          type="text"
-          placeholder="მომხმარებლის სახელი"
-          [(ngModel)]="registerUsername"
-        />
-        <input type="email" placeholder="იმეილი" [(ngModel)]="registerEmail" />
-        <input
-          type="password"
-          placeholder="პაროლი"
-          [(ngModel)]="registerPassword"
-        />
-        <input type="number" placeholder="მობილური" [(ngModel)]="registerPhone" />
-        <input
-          type="text"
-          placeholder="კოლეგა(REFERRAL)"
-          [(ngModel)]="referralCode"
-        />
-        <button (click)="onRegister()" mat-flat-button color="warn">
-          რეგისტრაცია
-        </button>
-      </div>
-      <div *ngIf="isForgotPasswordState()">
-        <input type="email" placeholder="იმეილი" />
-        <button (click)="onForgotPassword()" mat-flat-button color="warn">
-          აღდგენა
-        </button>
-      </div>
-      <mat-card-actions align="end">
-        <button (click)="onLoginClick()" mat-flat-button color="warn">
-          შესვლა
-        </button>
-        <button (click)="onRegisterClick()" mat-flat-button color="warn">
-          რეგისტრაცია
-        </button>
-        <button (click)="onForgotPasswordClick()" mat-raised-button color="warn">
-          დაგავიწყდა პაროლი?
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  
+  <mat-card id="authenticator-content">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <div>
+      <input type="text" />
+      <input type="password" placeholder="password" />
+      <button mat-flat-button color="warn">Log In</button>
+    </div>
+    <mat-card-actions align="end">
+      <button mat-flat-button color="warn" >Login</button>
+      <button mat-flat-button color="warn">Forgot Password</button>
+      <button mat-flat-button color="warn">Register</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
